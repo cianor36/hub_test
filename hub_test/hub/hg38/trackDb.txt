@@ -1,0 +1,60 @@
+track hubtest
+shortLabel All RiboSeq tracks
+longLabel All RiboSeq samples (filter by subgroups)
+type bigWig
+autoScale on
+dimensions dimX=strand
+maxHeightPixels 100:50:8
+sortOrder strand=+
+viewLimits -127:127
+visibility full
+subGroup1 strand Strand fwd=Forward rev=Reverse
+compositeTrack on
+
+    track MRGHUBTESTforwardall
+    bigDataUrl https://cianor36.github.io/hub_test/hub_test/MRGHUB/_T/MRGHUB_TEST_pshifted_forward.bw
+    shortLabel MRGHUB_TEST fwd all
+    longLabel MRGHUB_TEST | Homo sapiens | Ribo-Seq | hub_test (forward)
+    type bigWig
+    color 0,51,153
+    parent hubtest
+    subGroups strand=fwd
+
+    track MRGHUBTESTreverseall
+    bigDataUrl https://cianor36.github.io/hub_test/hub_test/MRGHUB/_T/MRGHUB_TEST_pshifted_reverse.bw
+    shortLabel MRGHUB_TEST rev all
+    longLabel MRGHUB_TEST | Homo sapiens | Ribo-Seq | hub_test (reverse)
+    type bigWig
+    color 204,85,0
+    negateValues on
+    parent hubtest
+    subGroups strand=rev
+
+track MRGHUBTESTagg
+shortLabel MRGHUB_TEST overlay
+longLabel MRGHUB_TEST | Homo sapiens | Ribo-Seq | hub_test (strand overlay)
+type bigWig
+aggregate transparentOverlay
+autoScale group
+maxHeightPixels 100:50:8
+showSubtrackColorOnUi on
+viewLimits -127:127
+visibility full
+container multiWig
+
+    track MRGHUBTESTaggforward
+    bigDataUrl https://cianor36.github.io/hub_test/hub_test/MRGHUB/_T/MRGHUB_TEST_pshifted_forward.bw
+    shortLabel forward
+    longLabel MRGHUB_TEST forward
+    type bigWig
+    color 0,51,153
+    parent MRGHUBTESTagg
+
+    track MRGHUBTESTaggreverse
+    bigDataUrl https://cianor36.github.io/hub_test/hub_test/MRGHUB/_T/MRGHUB_TEST_pshifted_reverse.bw
+    shortLabel reverse
+    longLabel MRGHUB_TEST reverse
+    type bigWig
+    color 204,85,0
+    negateValues on
+    parent MRGHUBTESTagg

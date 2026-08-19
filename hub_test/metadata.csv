@@ -1,2 +1,2 @@
 Run,ScientificName,LIBRARYTYPE,TISSUE,CELL_LINE,CONDITION,INHIBITOR
-MRGDD_TEST0,Homo sapiens,Ribo-Seq,,,DD_test,
+MRGHUB_TEST,Homo sapiens,Ribo-Seq,,,hub_test,

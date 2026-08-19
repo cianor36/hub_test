@@ -1,5 +1,5 @@
 hub hub
-shortLabel DD_test
-longLabel DD_test
+shortLabel hub_test
+longLabel hub_test
 genomesFile genomes.txt
 email riboseq@ucc.ie

@@ -1,5 +1,5 @@
 hub hub
-shortLabel AUG24
-longLabel AUG24
+shortLabel REAUG24
+longLabel REAUG24
 genomesFile genomes.txt
 email riboseq@ucc.ie

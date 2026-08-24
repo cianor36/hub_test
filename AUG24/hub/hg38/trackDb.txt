@@ -1,0 +1,60 @@
+track AUG24
+shortLabel All RiboSeq tracks
+longLabel All RiboSeq samples (filter by subgroups)
+type bigWig
+autoScale on
+dimensions dimX=strand
+maxHeightPixels 100:50:8
+sortOrder strand=+
+viewLimits -127:127
+visibility full
+subGroup1 strand Strand fwd=Forward rev=Reverse
+compositeTrack on
+
+    track MRGD0001forwardall
+    bigDataUrl https://raw.githubusercontent.com/cianor36/hub_test/main/AUG24/MRGD00/01/MRGD0001_pshifted_forward.bw
+    shortLabel MRGD0001 fwd all
+    longLabel MRGD0001 | Homo sapiens | Ribo-Seq | Kidney | HEK293 | Test, High | Cycloheximide (forward)
+    type bigWig
+    color 0,51,153
+    parent AUG24
+    subGroups strand=fwd
+
+    track MRGD0001reverseall
+    bigDataUrl https://raw.githubusercontent.com/cianor36/hub_test/main/AUG24/MRGD00/01/MRGD0001_pshifted_reverse.bw
+    shortLabel MRGD0001 rev all
+    longLabel MRGD0001 | Homo sapiens | Ribo-Seq | Kidney | HEK293 | Test, High | Cycloheximide (reverse)
+    type bigWig
+    color 204,85,0
+    negateValues on
+    parent AUG24
+    subGroups strand=rev
+
+track MRGD0001agg
+shortLabel MRGD0001 overlay
+longLabel MRGD0001 | Homo sapiens | Ribo-Seq | Kidney | HEK293 | Test, High | Cycloheximide (strand overlay)
+type bigWig
+aggregate transparentOverlay
+autoScale group
+maxHeightPixels 100:50:8
+showSubtrackColorOnUi on
+viewLimits -127:127
+visibility full
+container multiWig
+
+    track MRGD0001aggforward
+    bigDataUrl https://raw.githubusercontent.com/cianor36/hub_test/main/AUG24/MRGD00/01/MRGD0001_pshifted_forward.bw
+    shortLabel forward
+    longLabel MRGD0001 forward
+    type bigWig
+    color 0,51,153
+    parent MRGD0001agg
+
+    track MRGD0001aggreverse
+    bigDataUrl https://raw.githubusercontent.com/cianor36/hub_test/main/AUG24/MRGD00/01/MRGD0001_pshifted_reverse.bw
+    shortLabel reverse
+    longLabel MRGD0001 reverse
+    type bigWig
+    color 204,85,0
+    negateValues on
+    parent MRGD0001agg

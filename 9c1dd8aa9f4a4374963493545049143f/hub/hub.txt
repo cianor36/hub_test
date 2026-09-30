@@ -1,0 +1,5 @@
+hub hub
+shortLabel ANOTHERONE
+longLabel ANOTHERONE
+genomesFile genomes.txt
+email gwips@gmail.com
